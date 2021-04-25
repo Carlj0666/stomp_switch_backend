@@ -2,6 +2,7 @@
 
 class PedalSerializer
   include FastJsonapi::ObjectSerializer
+  belongs_to :brand
   attributes :name, :effect, :price
 
   # This adds "effects pedal" to the end of the name, or any other thing to customize
