@@ -10,5 +10,3 @@ class PedalsController < ApplicationController
   end
   
 end
-
-# I am curious about displaying more info in serialization

@@ -12,10 +12,8 @@ walrus = Brand.create(name: 'Walrus')
 
 # ADD PEDALS
 
-zoia = Pedal.create({name: 'Zoia', price: 499.00, effect: "Multi"})
-
 Pedal.create([
-    {name: 'Zoia', price: 499.99,  effect: 'Multi', brand: empress},
-    {name: 'Immerse', price: 199.99, effect: 'Reverb', brand: neunaber},
-    {name: 'Slarp', price: 349.99,  effect: 'Delay', brand: walrus},
+    {name: 'Zoia', price: 499.99,  effect: 'Multi', brand: empress, image_link: "https://cdn.shopify.com/s/files/1/0028/5462/products/ZOIA_top_down_cropped_scaled.jpg?v=1553767198"},
+    {name: 'Iconoclast', price: 199.99, effect: 'Speaker Cab Emulator', brand: neunaber, image_link: "https://cdn.shopify.com/s/files/1/0429/0425/products/Iconoclast_Angle_x1100.jpg?v=1594293754"},
+    {name: 'Descent Reverb/Octave Machine', price: 299.99,  effect: 'Reverb/Octave', brand: walrus, image_link: "https://cdn.shopify.com/s/files/1/0906/8480/products/Descent_new_a9d63ee2-6105-4c81-917b-62e4b4aa53d1_1800x.png?v=1571274640"}
 ])
