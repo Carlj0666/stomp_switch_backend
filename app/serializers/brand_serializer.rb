@@ -3,6 +3,7 @@
 
 class BrandSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :name
   has_many :pedals
+  attributes :name
+  
 end
