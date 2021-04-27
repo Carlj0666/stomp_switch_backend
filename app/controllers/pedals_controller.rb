@@ -14,13 +14,16 @@ class PedalsController < ApplicationController
     render json: PedalSerializer.new(pedal)
   end
   
-  #pedal belongs to a brand so this won't save...hmmmmmm
+
   def create
-    pedal = Pedal.new(pedalParams)
+    pedal = Pedal.new(pedal_params)
     #find or create by brand obj from pedal params store to variable 
-    brand = Brand.find_or_create_by({name: pedalParams['brand_name']})
-    pedal.brand = brand
+    # Changed brand_name to brand_id....line 22...Needs review
+    new_brand = Brand.find_or_create_by({name: pedal_params['brand_name']})
+    # byebug
+    pedal.brand = new_brand
     if pedal.save
+      byebug
       render json: PedalSerializer.new(pedal)
     else 
       render json: {error: pedal.errors}
@@ -30,7 +33,7 @@ end
 # created accepts_nested_attributes_for :pedals on brands controller, hmm.
 
   private
-  def pedalParams
-    params.require(:pedal).permit(:name, :effect, :price, :brand_name, :image_link)
+  def pedal_params
+    params.require(:pedal).permit(:name, :price, :effect, :brand_id, :image_link, :brand_name)
   end
 end

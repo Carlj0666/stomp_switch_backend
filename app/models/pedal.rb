@@ -5,8 +5,7 @@ class Pedal < ApplicationRecord
     self.brand.name
   end
 
-  def brand_is
-    pedal.brand = Brand.last
+  def brand_name=(name)
   end
-
+  
 end
