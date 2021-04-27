@@ -1,4 +1,5 @@
 class PedalsController < ApplicationController
+  
   def index
     pedals = Pedal.all
     render json: PedalSerializer.new(pedals)
@@ -9,6 +10,7 @@ class PedalsController < ApplicationController
     render json: PedalSerializer.new(pedal)
   end
 
+  #pedal belongs to a brand so this won't save
   def create
     pedal = Pedal.new(pedalParams)
     if pedal.save
@@ -16,9 +18,12 @@ class PedalsController < ApplicationController
     else 
       render json: {error: "ERROR line 17 in pedals controller"}
   end
+end
+
+# created accepts_nested_attributes_for :pedals on brands controller, hmm.
 
   private
   def pedalParams
-    params.require(:pedal).permit(:name, :price, :effect, :image_link, :brand_name)
-  
+    params.require(:pedal).permit(:name, :effect, :price, :brand_name, :image_link)
+  end
 end
