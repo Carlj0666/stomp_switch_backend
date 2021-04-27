@@ -1,5 +1,9 @@
+
 class PedalsController < ApplicationController
   
+  def new
+  end
+
   def index
     pedals = Pedal.all
     render json: PedalSerializer.new(pedals)
@@ -9,14 +13,17 @@ class PedalsController < ApplicationController
     pedal = Pedal.find(params[:id])
     render json: PedalSerializer.new(pedal)
   end
-
-  #pedal belongs to a brand so this won't save
+  
+  #pedal belongs to a brand so this won't save...hmmmmmm
   def create
     pedal = Pedal.new(pedalParams)
+    #find or create by brand obj from pedal params store to variable 
+    brand = Brand.find_or_create_by({name: pedalParams['brand_name']})
+    pedal.brand = brand
     if pedal.save
       render json: PedalSerializer.new(pedal)
     else 
-      render json: {error: "ERROR line 17 in pedals controller"}
+      render json: {error: pedal.errors}
   end
 end
 
