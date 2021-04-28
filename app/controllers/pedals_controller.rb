@@ -23,12 +23,18 @@ class PedalsController < ApplicationController
     # byebug
     pedal.brand = new_brand
     if pedal.save
-      byebug
+      # byebug
       render json: PedalSerializer.new(pedal)
     else 
       render json: {error: pedal.errors}
   end
 end
+
+def destroy
+  pedal = Pedal.find(params[:id])
+  pedal.destroy
+end
+
 
 # created accepts_nested_attributes_for :pedals on brands controller, hmm.
 
