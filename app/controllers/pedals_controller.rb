@@ -32,7 +32,9 @@ end
 
 def destroy
   pedal = Pedal.find(params[:id])
-  pedal.destroy
+  if pedal.destroy
+    render body: {}, status: :no_content
+  end
 end
 
 
