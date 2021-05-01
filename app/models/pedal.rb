@@ -7,5 +7,6 @@ class Pedal < ApplicationRecord
 
   def brand_name=(name)
   end
+
   
 end
