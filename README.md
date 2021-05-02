@@ -1,24 +1,12 @@
-# README
+# Welcome to the Stompswitch (backend)!
+This Javascript application allows the user to learn a bit about the huge selection of effects pedals available. The user has the option to add pedals to the web application as well. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### Installation
+Open the (backend) this app, of The Stompswitch in your favorite text editor, run (rails s) in the console to spin up the server. Open the (frontend) of The Stompswitch, and run (open index.html) in the console to load webpage from the the local host. 
 
-Things you may want to cover:
+#### Contributions
+Building out some additional functionality, such as adding a description section, rating system, and even loading video reviews and links to the pedls product pages are all great ways to add to this app! Follow the conventions used in the writting of this program. Thanks!
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### License
+Creative Commons License
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
